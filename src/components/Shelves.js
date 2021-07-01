@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Shelf from './Shelf';
 import SearchBtn from './SearchBtn';
 
@@ -7,10 +8,7 @@ const Shelves = (props) => {
     const currentlyReading = books.filter(book => book.shelf === "currentlyReading")
     const wantToRead = books.filter(book => book.shelf === "wantToRead")
     const read = books.filter(book => book.shelf === "read")
-    console.log('booksbooks', books);
-    console.log('currentlyReading', currentlyReading);
-    console.log('wantToRead', wantToRead);
-    console.log('read', read);
+
     return (
         <div className="list-books">
             <div className="list-books-title">
@@ -25,5 +23,8 @@ const Shelves = (props) => {
         </div>
     );
 };
-
+Shelves.PropTypes = {
+    books: PropTypes.array.isRequired,
+    bookShelfHandler: PropTypes.func.isRequired,
+}
 export default Shelves;

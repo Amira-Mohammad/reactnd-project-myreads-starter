@@ -1,10 +1,18 @@
 # MyReads Project
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
+This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this project is to practise on topics that are included in the previous module such as 
+├── Rendering UI with React
+├── State management
+├── lifecycle methods
+├── React router
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
+And I used some of packages that are compatable with React to acheive this project such as 
+├── react router dom
+├── prop-types
 
-## TL;DR
+And for backend integration I used API file attached inside starter files project
+ 
+## Installation 
 
 To get started developing right away:
 

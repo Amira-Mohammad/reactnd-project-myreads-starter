@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import * as BooksAPI from '../BooksAPI'
 class Search extends Component {
     state = {
         query: ''
     }
+
+
     UpdateQuery = (query) => {
-        this.setState(() => ({
-            query: query.trim()
-        }))
+        BooksAPI.search(query).then(() => {
+            BooksAPI.getAll().then(() => {
+                this.setState({
+                    query: query
+                })
+            })
+        })
     }
     render() {
         const query = this.state.query;
@@ -42,7 +49,7 @@ class Search extends Component {
                     <ol className="books-grid">
                         {showingBooks.map(book => {
                             return (
-                                <div className="book" key={book.title}>
+                                <div className="book" key={book.id}>
                                     <div className="book-top">
                                         <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
                                         <div className="book-shelf-changer">
@@ -56,7 +63,7 @@ class Search extends Component {
                                         </div>
                                     </div>
                                     <div className="book-title">{book.title}</div>
-                                    <div className="book-authors">{book.author}</div>
+                                    <div className="book-authors">{book.authors}</div>
                                 </div>
                             )
                         })}
