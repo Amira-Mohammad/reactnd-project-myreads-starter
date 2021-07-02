@@ -1,6 +1,6 @@
 import React from 'react';
 import Shelves from '../components/Shelves';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 const Home = (props) => {
     const books = props.books
     return (
@@ -10,8 +10,8 @@ const Home = (props) => {
     );
 
 };
-Home.PropTypes = {
-    books: PropTypes.array.isRequired
+Home.propTypes = {
+    books: propTypes.array.isRequired
 }
 
 export default Home;

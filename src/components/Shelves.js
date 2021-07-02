@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import Shelf from './Shelf';
 import SearchBtn from './SearchBtn';
 
@@ -23,8 +23,8 @@ const Shelves = (props) => {
         </div>
     );
 };
-Shelves.PropTypes = {
-    books: PropTypes.array.isRequired,
-    bookShelfHandler: PropTypes.func.isRequired,
+Shelves.propTypes = {
+    books: propTypes.array.isRequired,
+    bookShelfHandler: propTypes.func.isRequired,
 }
 export default Shelves;

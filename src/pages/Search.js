@@ -8,12 +8,11 @@ class Search extends Component {
 
 
     UpdateQuery = (query) => {
+        this.setState({
+            query: query
+        })
         BooksAPI.search(query).then(() => {
-            BooksAPI.getAll().then(() => {
-                this.setState({
-                    query: query
-                })
-            })
+            BooksAPI.search()
         })
     }
     render() {
