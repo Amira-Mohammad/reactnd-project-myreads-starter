@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import * as BooksAPI from '../BooksAPI'
 class Search extends Component {
     state = {
-        query: ''
+        query: '',
+        searchResult: ''
     }
 
 
@@ -12,14 +13,17 @@ class Search extends Component {
             query: query
         })
         BooksAPI.search(query).then(() => {
-            BooksAPI.search()
+            this.setState({
+                searchResult: query
+            })
         })
     }
     render() {
         const query = this.state.query;
+        const searchResult = this.state.searchResult;
         const books = this.props.books;
-        const showingBooks = query === '' ? books : books.filter((b) => (
-            b.title.toLowerCase().includes(query.toLowerCase())
+        const showingBooks = searchResult === '' ? books : books.filter((b) => (
+            b.title.toLowerCase().includes(searchResult.toLowerCase())
         ))
         return (
             <div className="search-books">
